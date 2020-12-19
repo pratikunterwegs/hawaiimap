@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# ingore data
+data/*
+!data/00_data_exists.txt

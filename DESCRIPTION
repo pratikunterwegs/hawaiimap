@@ -1,0 +1,15 @@
+Package: hawaiimap
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Pratik Rajan",
+           family = "Gupte",
+           role = c("aut", "cre"),
+           email = "pratikgupte16@gmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0001-5294-7819"))
+Description: Miscellaneous spatial operations on Hawaii.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
