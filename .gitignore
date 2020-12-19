@@ -6,3 +6,4 @@
 # ingore data
 data/*
 !data/00_data_exists.txt
+!data/*.sh
