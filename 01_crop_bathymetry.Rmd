@@ -81,7 +81,7 @@ bbox_total <- st_transform(bbox_total, 4326)
 # save as hawaii extent
 st_write(
   bbox_total,
-  dsn = "data/vector/extent_hawaii.gpkg", 
+  dsn = "data/vector/extent_hawaii.gpkg",
   append = FALSE
 )
 ```
@@ -117,7 +117,8 @@ values(etopo_shallow)[values(etopo_shallow) < -1000] <- NA
 
 # save this to operate out of memory
 writeRaster(etopo_shallow,
-            filename = "data/raster/etopo_shallow.tif")
+  filename = "data/raster/etopo_shallow.tif"
+)
 
 library(stars)
 contour_levels <- st_contour(
@@ -144,24 +145,30 @@ st_write(
 library(tmap)
 
 # plot figure
-figure_hawaii <- 
-  tm_shape(shp = etopo_hawaii)+
+figure_hawaii <-
+  tm_shape(shp = etopo_hawaii) +
   tm_raster(
     colorNA = "black",
     # palette = rev(RColorBrewer::brewer.pal(7, "PuBu")
     palette = rev(pals::kovesi.linear_blue_95_50_c20(7)),
-    title = "depth (m)")+
-  tm_shape(contour_levels)+
-  tm_fill(col = "upper_limit", 
-          palette = RColorBrewer::brewer.pal(2, "Reds"), 
-          style = "cat")+
-  tm_compass(position = "left")+
-  tm_scale_bar(position = "left", 
-               breaks = c(0, 100, 250, 500))
+    title = "depth (m)"
+  ) +
+  tm_shape(contour_levels) +
+  tm_fill(
+    col = "upper_limit",
+    palette = RColorBrewer::brewer.pal(2, "Reds"),
+    style = "cat"
+  ) +
+  tm_compass(position = "left") +
+  tm_scale_bar(
+    position = "left",
+    breaks = c(0, 100, 250, 500)
+  )
 
 # save to file
 tmap_save(
-  figure_hawaii, filename = "figures/figure_hawaii_bathymetry.png"
+  figure_hawaii,
+  filename = "figures/figure_hawaii_bathymetry.png"
 )
 ```
 
